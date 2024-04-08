@@ -1,8 +1,13 @@
 export default function createIteratorObject(report) {
-  const myarray = [];
-  for (const item of Object.values(report.allEmployees)) {
-    myarray.push(...item);
+  function* employeeGenerator() {
+    for (const employees of Object.values(report.allEmployees)) {
+      for (const employee of employees) {
+        yield employee;
+      }
+    }
   }
 
-  return myarray;
+  return {
+    [Symbol.iterator]: employeeGenerator
+  };
 }
