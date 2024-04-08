@@ -12,3 +12,7 @@
 
 ### const
 - const is used to declare variables that cannot be changed throughout the code.
+
+### Rest
+- Rest parameters allows a function to accept an indefinite number of arguments.
+
