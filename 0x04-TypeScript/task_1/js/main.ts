@@ -11,7 +11,7 @@ const teacher3: Teacher = {
     lastName: 'Doe',
     fullTimeEmployee: false,
     location: 'London',
-    contract: false, // Additional attribute
+    contract: false,
 };
   
 console.log(teacher3);
@@ -29,3 +29,11 @@ const director1: Directors = {
 };
   
 console.log(director1);
+
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName.charAt(0)}. ${lastName}`;
+}
+  
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
