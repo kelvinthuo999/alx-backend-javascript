@@ -1,6 +1,6 @@
-const fs = require('fs');
-
 //Function to read a file
+
+const fs = require('fs');
 
 const countStudents = (dataPath) => {
   try {
