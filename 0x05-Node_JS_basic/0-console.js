@@ -1,9 +1,7 @@
-/*
- * Function to display to STDOUT
- */
+// Function to print to STDOUT
 
 function displayMessage(message) {
 	console.log(message);
-};
+}
 
 module.exports = displayMessage;
