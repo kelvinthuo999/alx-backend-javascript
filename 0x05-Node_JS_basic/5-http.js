@@ -27,21 +27,21 @@ const app = http.createServer((req, res) => {
       }
 
       const lines = data.trim().split('\n');
-      const students = lines.slice(1).filter(line => line).map(line => {
-        const [firstname, lastname, age, field] = line.split(',');
+      const students = lines.slice(1).filter((line) => line).map((line) => {
+        const [firstname, lastname, field] = line.split(',');
         return { firstname, lastname, field };
       });
 
       const studentCount = students.length;
-      const csStudents = students.filter(student => student.field === 'CS');
-      const sweStudents = students.filter(student => student.field === 'SWE');
+      const csStudents = students.filter((student) => student.field === 'CS');
+      const sweStudents = students.filter((student) => student.field === 'SWE');
 
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/plain');
       res.write('This is the list of our students\n');
       res.write(`Number of students: ${studentCount}\n`);
-      res.write(`Number of students in CS: ${csStudents.length}. List: ${csStudents.map(student => student.firstname).join(', ')}\n`);
-      res.write(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.map(student => student.firstname).join(', ')}\n`);
+      res.write(`Number of students in CS: ${csStudents.length}. List: ${csStudents.map((student) => student.firstname).join(', ')}\n`);
+      res.write(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.map((student) => student.firstname).join(', ')}\n`);
       res.end();
     });
   } else {

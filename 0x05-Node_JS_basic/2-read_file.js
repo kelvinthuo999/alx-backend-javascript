@@ -1,4 +1,4 @@
-//Function to read a file
+// Function to read a file
 
 const fs = require('fs');
 
@@ -9,13 +9,13 @@ const countStudents = (dataPath) => {
     }
 
     const data = fs.readFileSync(dataPath, 'utf8');
-    const lines = data.trim().split('\n').filter(line => line.trim() !== '');
+    const lines = data.trim().split('\n').filter((line) => line.trim() !== '');
     const studentGroups = {};
-    const [fieldNames, ...studentRecords] = lines.map(line => line.split(','));
+    const [fieldNames, ...studentRecords] = lines.map((line) => line.split(','));
     const fieldCount = fieldNames.length;
     const studentPropNames = fieldNames.slice(0, fieldCount - 1);
 
-    studentRecords.forEach(record => {
+    studentRecords.forEach((record) => {
       const field = record[fieldCount - 1];
       const studentPropValues = record.slice(0, fieldCount - 1);
       if (!studentGroups[field]) {
@@ -33,7 +33,7 @@ const countStudents = (dataPath) => {
     console.log(`Number of students: ${totalStudents}`);
 
     for (const [field, students] of Object.entries(studentGroups)) {
-      const studentNames = students.map(student => student.firstname).join(', ');
+      const studentNames = students.map((student) => student.firstname).join(', ');
       console.log(`Number of students in ${field}: ${students.length}. List: ${studentNames}`);
     }
   } catch (error) {

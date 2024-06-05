@@ -1,5 +1,6 @@
-//Function to run express
+// Function to run express
 const express = require('express');
+
 const app = express();
 
 app.get('/', (req, res) => {
