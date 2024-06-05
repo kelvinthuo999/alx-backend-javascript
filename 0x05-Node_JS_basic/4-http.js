@@ -1,5 +1,4 @@
-//Function to create http server
-
+// Function to create http server
 
 const http = require('http');
 
