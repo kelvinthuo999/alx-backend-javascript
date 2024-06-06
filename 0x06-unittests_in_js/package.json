@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "- Learning about tests in NodeJS",
   "main": "0-calcul.js",
-  "dependencies": {},
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
   "devDependencies": {
     "chai": "^5.1.1",
     "mocha": "^10.4.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-esm": "node -r esm./node_modules/mocha/bin/_mocha \"2-calcul_chai.test.js\""
   },
   "keywords": [],
   "author": "",
