@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "- Learning how to carry out tests on JS files.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "mocha"
   },
@@ -14,6 +15,7 @@
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
+    "esm": "^3.2.25",
     "mocha": "^10.4.0"
   }
 }
